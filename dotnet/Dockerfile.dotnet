@@ -1,0 +1,25 @@
+FROM sunside/trusty-mono:4.5.0.421
+MAINTAINER Markus Mayer <awesome@wundercart.de>
+
+RUN	apt-get update \
+	&& apt-get install -y curl \
+		libicu52 liblldb-3.6 liblttng-ust0 libunwind8 \
+		clang-3.5 \
+	&& apt-get -y autoremove \
+	&& apt-get -y clean \
+	&& rm -rf /var/lib/apt/lists/*
+
+RUN curl -o /tmp/host.deb -sSL https://dotnetcli.blob.core.windows.net/dotnet/beta/Installers/Latest/dotnet-host-ubuntu-x64.latest.deb \
+	&& dpkg -i /tmp/host.deb \
+	&& rm /tmp/*.deb
+
+RUN curl -o /tmp/sharedframework.deb -sSL https://dotnetcli.blob.core.windows.net/dotnet/beta/Installers/Latest/dotnet-sharedframework-ubuntu-x64.latest.deb \
+	&& dpkg -i /tmp/sharedframework.deb \
+	&& rm /tmp/*.deb
+
+RUN curl -o /tmp/sdk.deb -sSL https://dotnetcli.blob.core.windows.net/dotnet/beta/Installers/Latest/dotnet-sdk-ubuntu-x64.latest.deb \
+	&& dpkg -i /tmp/sdk.deb \
+	&& rm /tmp/*.deb
+
+# Workaround for https://github.com/dotnet/cli/issues/1582, Bug only appears in Docker < 1.11.0
+ENV LTTNG_UST_REGISTER_TIMEOUT -1
