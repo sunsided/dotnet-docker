@@ -23,3 +23,9 @@ The dotnet image contains the latest  `dotnet` CLI version from [github.com/dotn
 ```
 docker build -t sunside/dotnet:latest -f Dockerfile.dotnet .
 ```
+
+To build the official preview1 release version, use
+
+```
+docker build -t sunside/dotnet:official -f Dockerfile.dotnet-official .
+```

@@ -1,0 +1,16 @@
+FROM sunside/trusty-mono:4.5.0.421
+MAINTAINER Markus Mayer <awesome@wundercart.de>
+
+RUN     apt-get update \
+        && apt-get install -y apt-transport-https \
+        && echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list \
+        && apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893 \
+	&& apt-get update \
+	&& apt-get install -y dotnet-dev-1.0.0-preview1-002702 \
+	&& apt-get -y autoremove \
+	&& apt-get -y clean \
+	&& rm -rf /var/lib/apt/lists/*
+
+
+# Workaround for https://github.com/dotnet/cli/issues/1582, Bug only appears in Docker < 1.11.0
+ENV LTTNG_UST_REGISTER_TIMEOUT -1
