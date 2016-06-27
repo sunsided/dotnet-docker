@@ -1,4 +1,4 @@
-FROM sunside/trusty-mono:4.5.0.421
+FROM sunside/trusty-mono:4.5.2.372
 MAINTAINER Markus Mayer <awesome@wundercart.de>
 
 RUN	apt-get update \
