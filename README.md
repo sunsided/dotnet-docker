@@ -13,7 +13,7 @@ docker build -t sunside/trusty-libuv:1.9.1 -f Dockerfile.trusty-libuv .
 The Mono image [sunside/trusty-mono](https://hub.docker.com/r/sunside/trusty-mono/) is based on a nightly build of `mono-runtime`.
 
 ```
-docker build -t sunside/trusty-mono:4.5.0.421 -f Dockerfile.mono .
+docker build -t sunside/trusty-mono:4.5.2.372 -f Dockerfile.mono .
 ```
 
 ## Build the dotnet base image
@@ -24,7 +24,7 @@ The dotnet image [sunside/dotnet](https://hub.docker.com/r/sunside/dotnet/) cont
 docker build -t sunside/dotnet:latest -f Dockerfile.dotnet .
 ```
 
-To build the official Ubuntu `preview1` version, use
+To build the official Ubuntu `preview2` version, use
 
 ```
 docker build -t sunside/dotnet:official -f Dockerfile.dotnet-official .
