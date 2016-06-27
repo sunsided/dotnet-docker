@@ -5,7 +5,7 @@
 The Ubuntu image [sunside/trusty-libuv](https://hub.docker.com/r/sunside/trusty-libuv/) is based on `ubuntu:trusty`, contains `curl` and `vim-tiny` as well as a custom built version of `libuv`. 
 
 ```
-docker build -t sunside/trusty-libuv:1.8.0 -f Dockerfile.trusty-libuv .
+docker build -t sunside/trusty-libuv:1.9.1 -f Dockerfile.trusty-libuv .
 ```
 
 ## Build the Mono base image
