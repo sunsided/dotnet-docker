@@ -1,5 +1,5 @@
 FROM ubuntu:trusty
-MAINTAINER Markus Mayer <awesome@wundercart.de>
+MAINTAINER Markus Mayer <awesome@everybag.de>
 
 RUN LIBUV_VERSION=1.9.1 \
 	&& apt-get update \
