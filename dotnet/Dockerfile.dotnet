@@ -1,5 +1,5 @@
 FROM sunside/trusty-mono:4.7.0.559
-MAINTAINER Markus Mayer <awesome@wundercart.de>
+MAINTAINER Markus Mayer <awesome@everybag.de>
 
 RUN     apt-get update \
         && apt-get install -y apt-transport-https \

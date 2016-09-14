@@ -1,5 +1,5 @@
 FROM sunside/trusty-libuv:1.9.1
-MAINTAINER Markus Mayer <awesome@wundercart.de>
+MAINTAINER Markus Mayer <awesome@everybag.de>
 
 ENV MONO_VERSION 4.7.0.559
 ENV DEBIAN_MONO_VERSION 4.7.0.559-0nightly1
