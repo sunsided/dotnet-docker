@@ -1,4 +1,4 @@
-FROM sunside/trusty-mono:4.5.2.372
+FROM sunside/trusty-mono:4.7.0.559
 MAINTAINER Markus Mayer <awesome@wundercart.de>
 
 RUN     apt-get update \
@@ -6,19 +6,22 @@ RUN     apt-get update \
         && echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list \
         && apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893 \
 	&& apt-get update \
-	&& apt-get install -y dotnet-dev-1.0.0-preview2-003121 \
+	&& apt-get install -y dotnet-dev-1.0.0-preview2-003131 \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
 	&& rm -rf /var/lib/apt/lists/*
 
-
 # Workaround for https://github.com/dotnet/cli/issues/1582, Bug only appears in Docker < 1.11.0
 ENV LTTNG_UST_REGISTER_TIMEOUT 0
 
+# fix for System.Native not being found on net4xx targets
+RUN ln -s /usr/share/dotnet/shared/Microsoft.NETCore.App/1.0.1/System.Native.so /usr/lib/libSystem.Native.so && \
+    ldconfig
+
 # Trigger the population of the local package cache  
-ENV NUGET_XMLDOC_MODE skip  
-RUN mkdir warmup \  
-    && cd warmup \  
-    && dotnet new \  
-    && cd .. \  
+ENV NUGET_XMLDOC_MODE skip
+RUN mkdir warmup \
+    && cd warmup \
+    && dotnet new \
+    && cd .. \
     && rm -rf warmup
