@@ -17,7 +17,7 @@ docker build -t sunside/trusty-libuv:1.9.1 -f Dockerfile.trusty-libuv .
 The Mono image [sunside/trusty-mono](https://hub.docker.com/r/sunside/trusty-mono/) is based on a nightly build of `mono-runtime`.
 
 ```
-docker build -t sunside/trusty-mono:4.5.2.372 -f Dockerfile.mono .
+docker build -t sunside/trusty-mono:4.7.0.593 -f Dockerfile.mono .
 ```
 
 ## Build the dotnet base image
