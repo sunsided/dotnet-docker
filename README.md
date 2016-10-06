@@ -27,5 +27,5 @@ docker build -t sunside/trusty-mono:4.7.0.593 -f Dockerfile.mono .
 The dotnet image [sunside/dotnet](https://hub.docker.com/r/sunside/dotnet/) contains the latest  `dotnet` ("preview2") CLI version from [dot.net](https://dot.net).
 
 ```
-docker build -t sunside/dotnet:official -f Dockerfile.dotnet-official .
+docker build -t sunside/dotnet:preview2 -f Dockerfile.dotnet .
 ```

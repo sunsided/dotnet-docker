@@ -15,7 +15,9 @@ RUN     apt-get update \
 ENV LTTNG_UST_REGISTER_TIMEOUT 0
 
 # fix for System.Native not being found on net4xx targets
-RUN ln -s /usr/share/dotnet/shared/Microsoft.NETCore.App/1.0.1/System.Native.so /usr/lib/libSystem.Native.so && \
+ENV SYSTEM_NATIVE_DLL /usr/share/dotnet/shared/Microsoft.NETCore.App/1.0.2-servicing-004528-00/System.Native.so
+RUN test -e ${SYSTEM_NATIVE_DLL} && \
+    ln -s ${SYSTEM_NATIVE_DLL} /usr/lib/libSystem.Native.so && \
     ldconfig
 
 # Trigger the population of the local package cache  
