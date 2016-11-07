@@ -1,4 +1,4 @@
-FROM sunside/trusty-mono:4.7.0.593
+FROM sunside/trusty-mono:4.9.0.729
 MAINTAINER Markus Mayer <awesome@everybag.de>
 
 RUN     apt-get update \
