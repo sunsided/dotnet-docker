@@ -1,4 +1,4 @@
-FROM sunside/trusty-mono:4.9.0.729
+FROM sunside/trusty-mono:4.9.0.833
 MAINTAINER Markus Mayer <awesome@everybag.de>
 
 RUN     apt-get update \
@@ -6,7 +6,7 @@ RUN     apt-get update \
         && echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list \
         && apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893 \
 	&& apt-get update \
-	&& apt-get install -y dotnet-dev-1.0.0-preview2-003139 \
+	&& apt-get install -y dotnet-dev-1.0.0-preview2.1-003177 \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
 	&& rm -rf /var/lib/apt/lists/*
@@ -15,7 +15,7 @@ RUN     apt-get update \
 ENV LTTNG_UST_REGISTER_TIMEOUT 0
 
 # fix for System.Native not being found on net4xx targets
-ENV SYSTEM_NATIVE_DLL /usr/share/dotnet/shared/Microsoft.NETCore.App/1.0.2-servicing-004528-00/System.Native.so
+ENV SYSTEM_NATIVE_DLL /usr/share/dotnet/shared/Microsoft.NETCore.App/1.1.0/System.Native.so
 RUN test -e ${SYSTEM_NATIVE_DLL} && \
     ln -s ${SYSTEM_NATIVE_DLL} /usr/lib/libSystem.Native.so && \
     ldconfig
