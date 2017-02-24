@@ -10,9 +10,7 @@ RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 3FA7E0328081BFF6A14
 	&& apt-get update \
 	&& apt-get upgrade -y \
 	&& apt-get install -y mono-runtime=$DEBIAN_MONO_VERSION mono-mcs=$DEBIAN_MONO_VERSION mono-xbuild=$DEBIAN_MONO_VERSION  mono-devel=$DEBIAN_MONO_VERSION ca-certificates-mono \
-	&& apt-get install -y fsharp \
-	&& apt-get install -y msbuild \
-	&& apt-get install -y nuget \
+	                      fsharp msbuild nuget \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
 	&& rm -rf /var/lib/apt/lists/*
