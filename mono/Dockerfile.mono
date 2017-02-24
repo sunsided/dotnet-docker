@@ -6,9 +6,12 @@ ENV DEBIAN_MONO_VERSION 4.9.0.1784-0nightly1
 
 RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF \
 	&& echo "deb http://download.mono-project.com/repo/debian nightly main" > /etc/apt/sources.list.d/mono-nightly.list \
+	&& echo "deb http://download.mono-project.com/repo/debian wheezy main" > /etc/apt/sources.list.d/mono-wheezy.list \
 	&& apt-get update \
 	&& apt-get upgrade -y \
 	&& apt-get install -y mono-runtime=$DEBIAN_MONO_VERSION mono-mcs=$DEBIAN_MONO_VERSION mono-xbuild=$DEBIAN_MONO_VERSION  mono-devel=$DEBIAN_MONO_VERSION ca-certificates-mono \
+	&& apt-get install -y fsharp \
+	&& apt-get install -y msbuild \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
 	&& rm -rf /var/lib/apt/lists/*
