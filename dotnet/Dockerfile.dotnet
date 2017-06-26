@@ -1,4 +1,4 @@
-FROM sunside/trusty-mono:5.0.0.100
+FROM sunside/trusty-mono:5.0.1.1
 MAINTAINER Markus Mayer <awesome@everybag.de>
 
 RUN     apt-get update \
@@ -27,3 +27,6 @@ RUN mkdir warmup \
     && dotnet new \
     && cd .. \
     && rm -rf warmup
+
+# Workaround to build and run netXXX apps using dotnet
+ENV FrameworkPathOverride /usr/lib/mono/4.5/
