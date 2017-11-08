@@ -1,20 +1,20 @@
 # dotnet-cli docker image
 
-## Build the Ubuntu Trusty base image
+## Build the Ubuntu Xenial base image
 
-[![](https://images.microbadger.com/badges/version/sunside/trusty-libuv.svg)](http://microbadger.com/images/sunside/trusty-libuv "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/sunside/trusty-libuv.svg)](http://microbadger.com/images/sunside/trusty-libuv "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/sunside/trusty-libuv.svg)](http://microbadger.com/images/sunside/trusty-libuv "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/sunside/xenial-libuv.svg)](http://microbadger.com/images/sunside/xenial-libuv "Get your own image badge on microbadger.com")
 
-The Ubuntu image [sunside/trusty-libuv](https://hub.docker.com/r/sunside/trusty-libuv/) is based on `ubuntu:trusty`, contains `curl` and `vim-tiny` as well as a custom built version of `libuv`. 
+The Ubuntu image [sunside/xenial-libuv](https://hub.docker.com/r/sunside/xenial-libuv/) is based on `ubuntu:xenial`, contains `curl` and `vim-tiny` as well as a custom built version of `libuv`. 
 
 ```
-docker build -t sunside/trusty-libuv:1.9.1 -f Dockerfile.trusty-libuv .
+docker build -t sunside:xenial-libuv:1.16.0 -f Dockerfile.xenial-libuv .
 ```
 
 ## Build the Mono base image
 
-[![](https://images.microbadger.com/badges/version/sunside/trusty-mono.svg)](http://microbadger.com/images/sunside/trusty-mono "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/sunside/trusty-mono.svg)](http://microbadger.com/images/sunside/trusty-mono "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/sunside/xenial-mono.svg)](http://microbadger.com/images/sunside/trusty-mono "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/sunside/xenial-mono.svg)](http://microbadger.com/images/sunside/xenial-mono "Get your own image badge on microbadger.com")
 
-The Mono image [sunside/trusty-mono](https://hub.docker.com/r/sunside/trusty-mono/) is based on a nightly build of `mono-runtime`.
+The Mono image [sunside/xenial-mono](https://hub.docker.com/r/sunside/xenial-mono/) is based on a nightly build of `mono-runtime`.
 
 ```
 docker build -t sunside/trusty-mono:4.7.0.593 -f Dockerfile.mono .

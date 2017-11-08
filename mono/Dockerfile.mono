@@ -1,4 +1,4 @@
-FROM sunside/trusty-libuv:1.11.0
+FROM sunside/xenial-libuv:1.16.0
 MAINTAINER Markus Mayer <awesome@everybag.de>
 
 RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF \
