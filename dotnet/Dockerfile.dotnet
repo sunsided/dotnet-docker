@@ -1,12 +1,13 @@
-FROM sunside/trusty-mono:5.0.1.1
-MAINTAINER Markus Mayer <awesome@everybag.de>
+FROM sunside/xenial-mono:5.9.0.235
+MAINTAINER Markus Mayer <awesome@nyris.io>
 
-RUN     apt-get update \
+RUN     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg \
+        && mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg \
+        && apt-get update \
         && apt-get install -y apt-transport-https \
-	&& sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list' \
-        && apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893 \
-	&& apt-get update \
-	&& apt-get install -y dotnet-sharedframework-microsoft.netcore.app-1.0.0 dotnet-dev-1.0.4 \
+	&& sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main" > /etc/apt/sources.list.d/dotnetdev.list' \
+        && apt-get update \
+        && apt-get install -y dotnet-sdk-2.0.3 \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
 	&& rm -rf /var/lib/apt/lists/*
@@ -15,7 +16,7 @@ RUN     apt-get update \
 ENV LTTNG_UST_REGISTER_TIMEOUT 0
 
 # fix for System.Native not being found on net4xx targets
-ENV SYSTEM_NATIVE_DLL /usr/share/dotnet/shared/Microsoft.NETCore.App/1.1.2/System.Native.so
+ENV SYSTEM_NATIVE_DLL /usr/share/dotnet/shared/Microsoft.NETCore.App/2.0.3/System.Native.so
 RUN test -e ${SYSTEM_NATIVE_DLL} && \
    ln -s ${SYSTEM_NATIVE_DLL} /usr/lib/libSystem.Native.so && \
    ldconfig
