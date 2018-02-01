@@ -12,6 +12,9 @@ RUN     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor >
 	&& apt-get -y clean \
 	&& rm -rf /var/lib/apt/lists/*
 
+RUN     wget -O /tmp/dotnet-1.1.7.tgz -c https://download.microsoft.com/download/4/E/6/4E64A465-F02E-43AD-9A86-A08A223A82C3/dotnet-dev-ubuntu.16.04-x64.1.1.7.tar.gz \
+        && tar --skip-old-files -xzvf /tmp/dotnet-1.1.7.tgz -C /usr/share/dotnet/
+
 # Workaround for https://github.com/dotnet/cli/issues/1582, Bug only appears in Docker < 1.11.0
 ENV LTTNG_UST_REGISTER_TIMEOUT 0
 
