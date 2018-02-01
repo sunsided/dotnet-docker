@@ -17,7 +17,7 @@ docker build -t sunside:xenial-libuv:1.16.0 -f Dockerfile.xenial-libuv .
 The Mono image [sunside/xenial-mono](https://hub.docker.com/r/sunside/xenial-mono/) is based on a nightly build of `mono-runtime`.
 
 ```
-docker build -t sunside/trusty-mono:4.7.0.593 -f Dockerfile.mono .
+docker build -t sunside/trusty-mono:5.3.0.67 -f Dockerfile.mono .
 ```
 
 ## Build the dotnet base image
@@ -27,5 +27,5 @@ docker build -t sunside/trusty-mono:4.7.0.593 -f Dockerfile.mono .
 The dotnet image [sunside/dotnet](https://hub.docker.com/r/sunside/dotnet/) contains the latest  `dotnet` ("preview2") CLI version from [dot.net](https://dot.net).
 
 ```
-docker build -t sunside/dotnet:2.0.3 -f Dockerfile.dotnet .
+docker build -t sunside/dotnet:2.1.4 -f Dockerfile.dotnet .
 ```
