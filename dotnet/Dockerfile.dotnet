@@ -16,7 +16,7 @@ RUN     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor >
 ENV LTTNG_UST_REGISTER_TIMEOUT 0
 
 # fix for System.Native not being found on net4xx targets
-ENV SYSTEM_NATIVE_DLL /usr/share/dotnet/shared/Microsoft.NETCore.App/2.1.4/System.Native.so
+ENV SYSTEM_NATIVE_DLL /usr/share/dotnet/shared/Microsoft.NETCore.App/2.0.5/System.Native.so
 RUN test -e ${SYSTEM_NATIVE_DLL} && \
    ln -s ${SYSTEM_NATIVE_DLL} /usr/lib/libSystem.Native.so && \
    ldconfig
