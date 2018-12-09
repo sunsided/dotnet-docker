@@ -17,7 +17,7 @@ docker build -t sunside/bionic-libuv:1.22.0 -f Dockerfile.bionic-libuv .
 The Mono image [sunside/bionic-mono](https://hub.docker.com/r/sunside/bionic-mono/) is based on a nightly build of `mono-runtime`.
 
 ```bash
-docker build -t sunside/bionic-mono:5.14.0.177 -f Dockerfile.mono .
+docker build -t sunside/bionic-mono:5.16.0.220 -f Dockerfile.mono .
 ```
 
 ## Build the dotnet base image
@@ -27,5 +27,5 @@ docker build -t sunside/bionic-mono:5.14.0.177 -f Dockerfile.mono .
 The dotnet image [sunside/dotnet](https://hub.docker.com/r/sunside/dotnet/) contains the latest  `dotnet` ("preview2") CLI version from [dot.net](https://dot.net).
 
 ```bash
-docker build -t sunside/dotnet:2.1.4-1.1.10 -f Dockerfile.dotnet .
+docker build -t sunside/dotnet:2.2.0-1.1.11 -f Dockerfile.dotnet .
 ```
