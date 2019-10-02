@@ -4,10 +4,10 @@
 
 [![](https://images.microbadger.com/badges/version/sunside/trusty-libuv.svg)](http://microbadger.com/images/sunside/trusty-libuv "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/sunside/bionic-libuv.svg)](http://microbadger.com/images/sunside/xenial-libuv "Get your own image badge on microbadger.com")
 
-The Ubuntu image [sunside/bionic-libuv](https://hub.docker.com/r/sunside/bionic-libuv/) is based on `ubuntu:bionic`, contains `curl` and `vim-tiny` as well as a custom built version of `libuv`.
+The Ubuntu image [sunside/bionic-libuv](https://hub.docker.com/r/sunside/disco-libuv/) is based on `ubuntu:disco`, contains `curl` and `vim-tiny` as well as a custom built version of `libuv`.
 
 ```bash
-docker build -t sunside/bionic-libuv:1.22.0 -f Dockerfile.bionic-libuv .
+docker build -t sunside/bionic-libuv:1.32.0 -f Dockerfile.disco-libuv .
 ```
 
 ## Build the Mono base image
