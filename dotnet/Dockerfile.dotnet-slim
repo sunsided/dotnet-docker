@@ -5,7 +5,7 @@ RUN     wget -q https://packages.microsoft.com/config/ubuntu/19.04/packages-micr
         && dpkg -i packages-microsoft-prod.deb \
         && apt-get update \
         && apt-get install -y apt-transport-https \
-        && apt-get install -y dotnet-sdk-3.0 dotnet-sdk-2.2 dotnet-sdk-2.1 \
+        && apt-get install -y dotnet-sdk-3.0 \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
 	&& rm -rf /var/lib/apt/lists/*
