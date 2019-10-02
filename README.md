@@ -14,10 +14,11 @@ docker build -t sunside/bionic-libuv:1.32.0 -f Dockerfile.disco-libuv .
 
 [![](https://images.microbadger.com/badges/version/sunside/xenial-mono.svg)](http://microbadger.com/images/sunside/trusty-mono "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/sunside/xenial-mono.svg)](http://microbadger.com/images/sunside/xenial-mono "Get your own image badge on microbadger.com")
 
-The Mono image [sunside/bionic-mono](https://hub.docker.com/r/sunside/bionic-mono/) is based on a nightly build of `mono-runtime`.
+The Mono image [sunside/bionic-mono](https://hub.docker.com/r/sunside/bionic-mono/) is based on a nightly build of `mono-runtime`. Make sure the `build.sh` file lists the correct versions;
+you can check them on the [Mono download page](https://www.mono-project.com/download/stable/#download-lin) and the Ubuntu package repository at `http://origin-download.mono-project.com/repo/ubuntu/dists/bionic/main/binary-amd64/Packages` (or similar, depending on the current version).
 
 ```bash
-docker build -t sunside/bionic-mono:5.16.0.220 -f Dockerfile.mono .
+docker build -t sunside/disco-mono:6.4.0.198 -f Dockerfile.mono .
 ```
 
 ## Build the dotnet base image
