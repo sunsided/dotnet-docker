@@ -5,7 +5,7 @@ RUN     wget -q https://packages.microsoft.com/config/ubuntu/19.04/packages-micr
         && dpkg -i packages-microsoft-prod.deb \
         && apt-get update \
         && apt-get install -y apt-transport-https \
-        && apt-get install -y dotnet-sdk-3.0 \
+        && apt-get install -y dotnet-sdk-3.1 \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
 	&& rm -rf /var/lib/apt/lists/*
@@ -15,7 +15,7 @@ RUN     wget -q https://packages.microsoft.com/config/ubuntu/19.04/packages-micr
 # ENV LTTNG_UST_REGISTER_TIMEOUT 0
 
 # fix for System.Native not being found on net4xx targets
-ENV SYSTEM_NATIVE_DLL /usr/share/dotnet/shared/Microsoft.NETCore.App/3.0.0/System.Native.so
+ENV SYSTEM_NATIVE_DLL /usr/share/dotnet/shared/Microsoft.NETCore.App/3.1.0/System.Native.so
 RUN test -e ${SYSTEM_NATIVE_DLL} && \
    ln -s ${SYSTEM_NATIVE_DLL} /usr/lib/libSystem.Native.so && \
    ldconfig

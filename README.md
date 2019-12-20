@@ -28,6 +28,6 @@ docker build -t sunside/disco-mono:6.4.0.198 -f Dockerfile.mono .
 The dotnet image [sunside/dotnet](https://hub.docker.com/r/sunside/dotnet/) contains the latest  `dotnet` ("preview2") CLI version from [dot.net](https://dot.net).
 
 ```bash
-docker build -t sunside/dotnet:3.0.100-2.2.402 -f Dockerfile.dotnet .
-docker build -t sunside/dotnet:3.0.100 -f Dockerfile.dotnet-slim .
+docker build -t sunside/dotnet:3.1.100-2.2.402 -f Dockerfile.dotnet .
+docker build -t sunside/dotnet:3.1.100 -f Dockerfile.dotnet-slim .
 ```
